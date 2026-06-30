@@ -15,7 +15,7 @@ source:
   sha256: 5231887856bed43b498ece9081d8da186f6506b1cd5b4a83ddb33f8e6d96ce2e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
@@ -65,7 +65,9 @@ tests:
 about:
   summary: Tools for building Pyodide
   license: MPL-2.0
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - pyodide_build/vendor/LICENSE
   homepage: https://pypi.org/project/pyodide-build
   repository: https://github.com/pyodide/pyodide-build
   documentation: https://pyodide-build.readthedocs.io
