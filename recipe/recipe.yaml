@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.37.0"
+  version: "0.38.0"
   python_min: "3.12"
   python_check_max: "3.14"
 
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/pyodide-build/pyodide_build-${{ version }}.tar.gz
-  sha256: 73a9ec4bb60e4cf1378d5c2dbc5e53d6ca9fe4a9d54fa00bb429a426aeaeb818
+  sha256: 555f81b84f0d1dee8b503d07f54b1e437d97f896d56a3d7b02bbc28290d9d6c1
 
 build:
   number: 0
@@ -27,13 +27,14 @@ requirements:
     - pip
     - python ${{ python_min }}.*
   run:
+    - attrs
     - auditwheel-emscripten >=0.2.0,<0.3.dev0
+    - cattrs
     - click >=8.0,<8.3.3
     - packaging
     - platformdirs
-    - pydantic >=2,<3
     - pyodide-cli >=0.4.1
-    - pyodide-lock >=0.1.0,<0.2.dev0
+    - pyodide-lock >=0.2.0,<0.3.dev0
     - python >=${{ python_min }}
     - python-build >=1.4,<1.6,!=1.4.4
     - requests
